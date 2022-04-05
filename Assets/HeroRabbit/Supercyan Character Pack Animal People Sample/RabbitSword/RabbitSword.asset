@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8136279e1fa29249b51779bb0f78553, type: 3}
+  m_Name: RabbitSword
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 22100000, guid: 87048a4311936934ea6f3734562a0520, type: 2}
+  _weaponPrefab: {fileID: 2675766118812547793, guid: 619d1133708921b45a3134e3b96ee3d9,
+    type: 3}
+  _weaponModelInArm: {fileID: 61459704910499898, guid: bb856961d8bd3c348a298d3ffe1822c5,
+    type: 3}
+  _attackTime: 0.9

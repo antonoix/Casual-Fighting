@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RabbitGun
+  m_Controller: {fileID: 9100000, guid: b2a88a9073053e74981b82256458fe16, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: a362eb881c1e394418d795b125cfe575,
+      type: 3}
+    m_OverrideClip: {fileID: -2699175731913019455, guid: c79d7a5533acb9e4fa8b44b8e63b85a5,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 27609f96355661e47bacf6a8b701406e,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 27609f96355661e47bacf6a8b701406e,
+      type: 3}
+  - m_OriginalClip: {fileID: -4310782028147035131, guid: 4be89aa75182e8540ba0c61da6829930,
+      type: 3}
+    m_OverrideClip: {fileID: -4310782028147035131, guid: 4be89aa75182e8540ba0c61da6829930,
+      type: 3}

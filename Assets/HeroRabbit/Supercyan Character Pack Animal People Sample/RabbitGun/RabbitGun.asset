@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8136279e1fa29249b51779bb0f78553, type: 3}
+  m_Name: RabbitGun
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 22100000, guid: 9e6051067babfcf4788567603e06a7df, type: 2}
+  _weaponPrefab: {fileID: 8220015810709923314, guid: 2bbe6fe08960202418b58b744b7545fc,
+    type: 3}
+  _weaponModelInArm: {fileID: 714866670098443717, guid: a432e4d7bd8904144891b40ad291745a,
+    type: 3}
+  _attackTime: 0.6

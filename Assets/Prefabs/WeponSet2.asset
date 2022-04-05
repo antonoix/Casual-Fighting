@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c892d0c7ff7f058479ac4984852704b8, type: 3}
+  m_Name: WeponSet2
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  _heroSet:
+  - {fileID: 3725235027778164873, guid: 3761e3f722faf614eac8e8f6a86c040b, type: 3}
+  - {fileID: 7845662726564681019, guid: 5673419b493d276409a79074752f9ebd, type: 3}
+  - {fileID: 1272202938208856203, guid: d03485f71b9672e48aa98dd0dbbd4528, type: 3}
+  _locationSet: {fileID: 1350933114779467942, guid: 2283ae0c42c404945bd7acc88dd43991,
+    type: 3}

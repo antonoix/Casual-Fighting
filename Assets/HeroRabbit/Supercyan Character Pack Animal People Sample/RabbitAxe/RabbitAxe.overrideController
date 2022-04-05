@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RabbitAxe
+  m_Controller: {fileID: 9100000, guid: b2a88a9073053e74981b82256458fe16, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 4339206412922523724, guid: 4a61a927d6c379243a3e1a8ba50b8e04,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 27609f96355661e47bacf6a8b701406e,
+      type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 3c9671f81614b4f42baf6fc15dcac41b,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: a362eb881c1e394418d795b125cfe575,
+      type: 3}
+  - m_OriginalClip: {fileID: -5802446696568688704, guid: 2eac940117abfe94fa1edeaa5fa0d0e2,
+      type: 3}
+    m_OverrideClip: {fileID: -4310782028147035131, guid: 4be89aa75182e8540ba0c61da6829930,
+      type: 3}
