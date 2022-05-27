@@ -24,9 +24,4 @@ public class Controllable : MonoBehaviour
     {
         _input.CheckTouch();
     }
-
-    private void OnDestroy()
-    {
-        GameState.Instance.MakeFailed();
-    }
 }

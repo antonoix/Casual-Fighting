@@ -6,6 +6,7 @@ public class LevelSetSpawner : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("LVlPawn");
         LevelSet set = _sets[Random.Range(0, _sets.Length)];
         foreach (var e in set.HeroSet)
         {

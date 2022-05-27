@@ -11,7 +11,7 @@ public class PraiseText : MonoBehaviour
     public void SetText(int count)
     {
         _text = GetComponent<TextMeshProUGUI>();
-        _text.text = _texts[Mathf.Clamp(count - 2, 0, _texts.Length - 1)];
+        _text.text = _texts[Mathf.Clamp(count - 1, 0, _texts.Length - 1)];
 
         StartCoroutine(Disappear());
     }

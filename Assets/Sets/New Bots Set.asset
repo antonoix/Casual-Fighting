@@ -15,5 +15,8 @@ MonoBehaviour:
   prefabs:
   - {fileID: 6875103813293470632, guid: be865b1dde8b5f54c8af8ce25b5cd9d4, type: 3}
   - {fileID: 7074971643223135091, guid: 1b36d8868f0199a4a886b60e85a3e779, type: 3}
+  - {fileID: 688646416450544953, guid: 35f81f2fc5d36304a85d9271b398af8f, type: 3}
+  - {fileID: 2146362711167744099, guid: 9cb684bcc6c678a4c831dd356488ee52, type: 3}
+  - {fileID: 880363748578159290, guid: 4777e948d87a8284ca26afde81152de1, type: 3}
   minSpeed: 10
   maxSpeed: 20

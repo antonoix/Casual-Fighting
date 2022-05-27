@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c892d0c7ff7f058479ac4984852704b8, type: 3}
-  m_Name: WeaponSet1
+  m_Name: LevelSet2
   m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
-  _heroSet:
-  - {fileID: 6521463049023078915, guid: 9678590ca04116546a35256c0583050a, type: 3}
-  - {fileID: 2692484049139986438, guid: 53da12ebdfea9d748aa5ccf15896a61c, type: 3}
-  - {fileID: 1272202938208856203, guid: d03485f71b9672e48aa98dd0dbbd4528, type: 3}
-  _locationSet: {fileID: 7307242467582912383, guid: e7d501a091480de49829efd4ee88f954,
-    type: 3}
+  _bots: []
+  _locationSet: {fileID: 0}

@@ -1,10 +1,11 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Collections;
+using System;
 using UnityEngine;
 
 public class AimsManager
 {
+    public event Action OnAllEnemiesDied;
     private BotsSet _botsSet;
     private AimsFactory _factory;
 
@@ -45,11 +46,11 @@ public class AimsManager
     {
         _bots.Remove((Bot)bot);
         if (_bots.Count == 0)
-            GameState.Instance.MakeWin();
+            OnAllEnemiesDied?.Invoke();
     }
 
     private void SetAim(Bot bot)
     {
-        bot.FindAim(_aims[Random.Range(0, _aims.Count)]);
+        bot.FindAim(_aims[UnityEngine.Random.Range(0, _aims.Count)]);
     }
 }
