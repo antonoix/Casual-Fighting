@@ -5,13 +5,13 @@ public class Controllable : MonoBehaviour
 {
     private Hero _hero;
     private Attacker _attacker;
-    private MobileInput _input;
+    private ISystemInput _input;
 
-    private void Awake()
+    public void Init(ISystemInput input)
     {
         _hero = GetComponent<Hero>();
         _attacker = GetComponent<Attacker>();
-        _input = new MobileInput();
+        _input = input;
     }
 
     private void Start()

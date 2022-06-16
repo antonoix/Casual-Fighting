@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<languages>
+	<ru>
+		<id>1</id>
+		<coins>Монеты: </coins>
+    <level>Уровень: </level>
+		<menu>Меню</menu>
+    <next>Далее</next>
+    <play>Играть</play>
+    <educationIntro>Привет, предлагаю пройти небольшое обучение</educationIntro>
+    <ready>Готов!</ready>
+    <restart>Заново</restart>
+	</ru>
+	<en>
+		<id>1</id>
+		<coins>Coins: </coins>
+    <level>Level: </level>
+		<menu>Menu</menu>
+    <next>Next</next>
+    <play>Play</play>
+    <educationIntro>Hello! Lets start education</educationIntro>
+    <ready>Ready!</ready>
+    <restart>Restart</restart>
+	</en>
+</languages>  

@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponSet : ScriptableObject
 {
     [SerializeField] private AnimatorOverrideController _animation;
-    [SerializeField] private GameObject _weaponPrefab;
+    [SerializeField] private GameObject _weaponArea;
     [SerializeField] private GameObject _weaponModelInArm;
 
     [SerializeField] private float _attackTime;
@@ -20,7 +20,7 @@ public class WeaponSet : ScriptableObject
 
     public GameObject WeaponPrefab
     {
-        get { return _weaponPrefab; }
+        get { return _weaponArea; }
     }
 
     public GameObject WeaponModelArm

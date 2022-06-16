@@ -21,6 +21,9 @@ public class LoadButton : MonoBehaviour
     private IEnumerator LoadSceneAfterTime()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneManager.LoadScene(_SceneName);
+        if (_SceneName == "Game" && PlayerPrefs.GetInt(PrefsConfig.Educated) == 0)
+            SceneManager.LoadScene("Education");
+        else
+            SceneManager.LoadScene(_SceneName);
     }
 }

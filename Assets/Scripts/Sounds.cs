@@ -10,6 +10,7 @@ public class Sounds : MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this; 
@@ -20,6 +21,23 @@ public class Sounds : MonoBehaviour
         }
 
         audioS = GetComponent<AudioSource>();
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        Silence(!hasFocus);
+    }
+
+    void OnApplicationPause(bool isPaused)
+    {
+        Silence(isPaused);
+    }
+
+    private void Silence(bool silence)
+    {
+        AudioListener.pause = silence;
+        // Or / And
+        AudioListener.volume = silence ? 0 : 1;
     }
 
     public void PlayHit()
@@ -44,6 +62,8 @@ public class Sounds : MonoBehaviour
 
     public void PlayWinSound()
     {
+        if (audioS == null)
+            return;
         audioS.clip = (AudioClip)Resources.Load("Win");
         audioS.Play();
     }

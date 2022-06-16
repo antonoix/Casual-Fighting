@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RabbitBigGun
   m_EditorClassIdentifier: 
   _animation: {fileID: 22100000, guid: 8c9a7432c96c69f40bbafbbf947eed81, type: 2}
-  _weaponPrefab: {fileID: 8220015810709923314, guid: 2bbe6fe08960202418b58b744b7545fc,
+  _weaponArea: {fileID: 8220015810709923314, guid: 2bbe6fe08960202418b58b744b7545fc,
     type: 3}
   _weaponModelInArm: {fileID: 5160992011481555018, guid: a4453ee952865de40b94c21c4bb736ff,
     type: 3}

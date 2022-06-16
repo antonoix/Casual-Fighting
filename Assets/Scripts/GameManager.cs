@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] Hero _hero;
     [SerializeField] AimsFactory _factory;
-    [SerializeField] BotsSet _set;
+    [SerializeField] BotsSet[] _sets;
     [SerializeField] UI _ui;
 
+    private AdFromUnity _ads;
     private State _currentState;
 
     private enum State
@@ -19,9 +20,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        ISystemInput input = new PcInput(_ui.TouchPoint);
+        _ads = new AdFromUnity();
+
         _currentState = State.Playing;
         _hero.OnDied += HandleHeroDeath;
-        AimsManager aims = new AimsManager(_set, _factory);
+        _hero.GetComponent<Controllable>().Init(input);
+        AimsManager aims = new AimsManager(_sets[UnityEngine.Random.Range(0, _sets.Length)], _factory);
         aims.OnAllEnemiesDied += MakeWin;
     }
 
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
     {
         if (_currentState == State.Won)
             return;
+
+        _ads.ShowInterstitial();
         _currentState = State.Lost;
         Sounds.Instance.PlayLoseSound();
         _ui.ActivateRestart();

@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MobileInput
+public class MobileInput : ISystemInput
 {
     public event Action<Vector3> OnDirectionChanged;
     public event Action OnTouchEnded;
 
     private Vector2 _startPos;
+
+    private RectTransform _img;
+
+    public MobileInput(RectTransform img)
+    {
+        _img = img;
+    }
 
     public void CheckTouch()
     {
@@ -18,6 +25,8 @@ public class MobileInput
             if (touch.phase == TouchPhase.Began)
             {
                 _startPos = touch.position;
+                _img.gameObject.SetActive(true);
+                _img.position = touch.position;
             }
             if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
             {
@@ -25,6 +34,7 @@ public class MobileInput
             }
             if (touch.phase == TouchPhase.Ended)
             {
+                _img.gameObject.SetActive(false);
                 OnTouchEnded?.Invoke();
             }
         }

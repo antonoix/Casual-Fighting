@@ -6,11 +6,11 @@ using UnityEngine;
 public class AimsManager
 {
     public event Action OnAllEnemiesDied;
-    private BotsSet _botsSet;
-    private AimsFactory _factory;
+    private readonly BotsSet _botsSet;
+    private readonly AimsFactory _factory;
 
-    private List<Bot> _bots;
-    private List<IAim> _aims;
+    private readonly List<Bot> _bots;
+    private readonly List<IAim> _aims;
 
     public AimsManager(BotsSet setOfBots, AimsFactory factory)
     {

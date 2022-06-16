@@ -8,6 +8,8 @@ public class Hero : MonoBehaviour, IAim
     public event Action<IAim> OnDied;
     public event Action<IAim> OnDestroyed;
 
+    [SerializeField] protected GameObject _dieParticles;
+
     public float Multiplier { get; private set; } = 1;
     private Rigidbody _rb;
     private UI _UI;
@@ -21,18 +23,21 @@ public class Hero : MonoBehaviour, IAim
     private bool _isPlayer;
     private float _lastAttackTime;
 
-    [SerializeField] protected GameObject _dieParticles;
+    private bool _isEducation;
+    public void SetEducation(bool isEducation) =>  _isEducation = isEducation;  
 
     private void Awake()
     {
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
-    }
-
-    void Start()
-    {
         _UI = GameObject.FindObjectOfType<UI>();
         _isPlayer = TryGetComponent<Controllable>(out var controllable);
+        if (_isPlayer)
+        {
+            Multiplier += PlayerPrefs.GetFloat(PrefsConfig.SizeRatio);
+            transform.localScale = new Vector3(1, 1, 1) * Multiplier;
+            Speed += PlayerPrefs.GetFloat(PrefsConfig.SpeedRatio);
+        }
     }
 
     void Update()
@@ -54,12 +59,16 @@ public class Hero : MonoBehaviour, IAim
             Sounds.Instance.PlayHit();
     }
 
-    public void BecomeBigger(float multiplier)
+    private void BecomeBigger(float multiplier)
     {
         Multiplier *= multiplier * 1.15f;
         transform.localScale = new Vector3(1, 1, 1) * Multiplier;
-        if (_isPlayer && ++_killed % 2 == 0)
-            _UI.CreatePraiseText(_killed);
+
+        if (_isEducation)
+            return;
+        int interval = 2;
+        if (_isPlayer && ++_killed % interval == 0)
+            _UI.CreatePraiseText(_killed / interval);
     }
 
     public virtual void Die(Hero killer)

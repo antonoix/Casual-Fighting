@@ -6,12 +6,12 @@ using TMPro;
 public class PraiseText : MonoBehaviour
 {
     private TextMeshProUGUI _text;
-    readonly string[] _texts = new string[2] { "GOOD", "PERFECT" };
 
-    public void SetText(int count)
+    public void SetText(int count, string[] texts)
     {
         _text = GetComponent<TextMeshProUGUI>();
-        _text.text = _texts[Mathf.Clamp(count - 1, 0, _texts.Length - 1)];
+        int indx = (count - 1) % texts.Length;
+        _text.text = texts[indx];
 
         StartCoroutine(Disappear());
     }

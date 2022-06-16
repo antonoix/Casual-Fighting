@@ -15,7 +15,7 @@ public class CoinsText : MonoBehaviour
 
     private void UpdateCoins(int count)
     {
-        _text.text = "COINS: " + count;
+        _text.text = Localization.GetTranslated("coins") + count;
     }
 
     private void OnDestroy()

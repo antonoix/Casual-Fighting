@@ -10,6 +10,6 @@ public class LevelText : MonoBehaviour
         if (!PlayerPrefs.HasKey("Level"))
             PlayerPrefs.SetInt("Level", 1);
         GetComponent<TextMeshProUGUI>().text = 
-            string.Format("Level: {0}", PlayerPrefs.GetInt("Level"));
+            string.Format(Localization.GetTranslated("level") + PlayerPrefs.GetInt("Level"));
     }
 }

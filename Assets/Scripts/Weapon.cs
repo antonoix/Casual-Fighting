@@ -49,15 +49,6 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    protected void OnTriggerStay(Collider other)
-    {
-        if (other.transform.TryGetComponent<Hero>(out var hero))
-        {
-            AimToAttack = hero;
-            OnCollidedHero?.Invoke();
-        }
-    }
-
     protected void OnTriggerExit(Collider other)
     {
         if (other.transform.TryGetComponent<Hero>(out var hero))

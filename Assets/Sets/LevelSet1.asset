@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c892d0c7ff7f058479ac4984852704b8, type: 3}
   m_Name: LevelSet1
   m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
-  _bots: []
+  _weapons:
+  - {fileID: 2692484049139986439, guid: 53da12ebdfea9d748aa5ccf15896a61c, type: 3}
+  - {fileID: 3725235027778164872, guid: 3761e3f722faf614eac8e8f6a86c040b, type: 3}
+  - {fileID: 7845662726564681020, guid: 5673419b493d276409a79074752f9ebd, type: 3}
+  - {fileID: 6521463049023078913, guid: 9678590ca04116546a35256c0583050a, type: 3}
+  _shoes:
+  - {fileID: 1272202938208856200, guid: d03485f71b9672e48aa98dd0dbbd4528, type: 3}
+  _coins:
+  - {fileID: 596249129005942286, guid: 2577b1f0a974e314db272e04ced2e9c3, type: 3}
   _locationSet: {fileID: 0}
