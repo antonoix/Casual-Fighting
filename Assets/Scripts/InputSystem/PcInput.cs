@@ -39,7 +39,8 @@ public class PcInput : ISystemInput
 
     private Vector2 GetDirection(Vector2 touchPos)
     {
-        var direction = (touchPos - _startPos) / (Screen.width / 6);
+        var direction = (touchPos - _startPos) / (Screen.width / 12);
+        Debug.Log(direction);
         direction = new Vector2(Mathf.Clamp(direction.x, -1, 1), Mathf.Clamp(direction.y, -1, 1));
         return direction;
     }

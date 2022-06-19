@@ -5,6 +5,8 @@
 		<coins>Монеты: </coins>
     <level>Уровень: </level>
 		<menu>Меню</menu>
+    <settings>Настройки</settings>
+    <sound>Звуки</sound>
     <next>Далее</next>
     <play>Играть</play>
     <educationIntro>Привет, предлагаю пройти небольшое обучение</educationIntro>
@@ -16,6 +18,8 @@
 		<coins>Coins: </coins>
     <level>Level: </level>
 		<menu>Menu</menu>
+    <settings>Settings</settings>
+    <sound>Sound</sound>
     <next>Next</next>
     <play>Play</play>
     <educationIntro>Hello! Lets start education</educationIntro>

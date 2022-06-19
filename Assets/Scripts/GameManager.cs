@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] BotsSet[] _sets;
     [SerializeField] UI _ui;
 
-    private AdFromUnity _ads;
+    [SerializeField] private YandexAds _ads;
     private State _currentState;
 
     private enum State
@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         ISystemInput input = new PcInput(_ui.TouchPoint);
-        _ads = new AdFromUnity();
 
         _currentState = State.Playing;
         _hero.OnDied += HandleHeroDeath;

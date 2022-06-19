@@ -10,7 +10,6 @@ public class Sounds : MonoBehaviour
 
     private void Awake()
     {
-
         if (Instance == null)
         {
             Instance = this; 
@@ -20,20 +19,22 @@ public class Sounds : MonoBehaviour
             Destroy(gameObject); 
         }
 
+        MakeSilence(PlayerPrefs.GetInt(PrefsConfig.SoundsOff) == 1);
+
         audioS = GetComponent<AudioSource>();
     }
 
     void OnApplicationFocus(bool hasFocus)
     {
-        Silence(!hasFocus);
+        MakeSilence(!hasFocus);
     }
 
     void OnApplicationPause(bool isPaused)
     {
-        Silence(isPaused);
+        MakeSilence(isPaused);
     }
 
-    private void Silence(bool silence)
+    private void MakeSilence(bool silence)
     {
         AudioListener.pause = silence;
         // Or / And
