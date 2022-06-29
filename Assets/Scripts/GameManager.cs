@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Hero _hero;
     [SerializeField] AimsFactory _factory;
     [SerializeField] BotsSet[] _sets;
-    [SerializeField] UI _ui;
+    [SerializeField] UI _UI;
 
     [SerializeField] private YandexAds _ads;
     private State _currentState;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        ISystemInput input = new PcInput(_ui.TouchPoint);
+        ISystemInput input = new PcInput(_UI.TouchPoint);
 
         _currentState = State.Playing;
         _hero.OnDied += HandleHeroDeath;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         _ads.ShowInterstitial();
         _currentState = State.Lost;
         Sounds.Instance.PlayLoseSound();
-        _ui.ActivateRestart();
+        _UI.ActivateRestart();
     }
 
     public void MakeWin()
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             return;
         _currentState = State.Won;
         Sounds.Instance.PlayWinSound();
-        _ui.ActivateNextLvl();
-        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+        _UI.ActivateNextLvl();
+        PlayerPrefs.SetInt(PrefsConfig.Level, PlayerPrefs.GetInt(PrefsConfig.Level) + 1);
     }
 }

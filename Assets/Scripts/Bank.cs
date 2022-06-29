@@ -5,21 +5,12 @@ using UnityEngine;
 public class Bank
 {
     public static event Action<int> CoinsUpdated;
-    public static int _coinsCount;
-    public static int CoinsCount { get { return CheckIfPrefExists(); } }
+    public static int CoinsCount { get { return PlayerPrefs.GetInt(PrefsConfig.Coins); } private set { } }
 
     public static void AddCoins(int count)
     {
-        _coinsCount = CheckIfPrefExists() + count;
-        PlayerPrefs.SetInt(PrefsConfig.Coins, _coinsCount);
-        CoinsUpdated?.Invoke(_coinsCount);
-    }
-
-    private static int CheckIfPrefExists()
-    {
-        if (!PlayerPrefs.HasKey(PrefsConfig.Coins))
-            PlayerPrefs.SetInt(PrefsConfig.Coins, 0);
-        _coinsCount = PlayerPrefs.GetInt(PrefsConfig.Coins);
-        return _coinsCount;
+        CoinsCount = PlayerPrefs.GetInt(PrefsConfig.Coins) + count;
+        PlayerPrefs.SetInt(PrefsConfig.Coins, CoinsCount);
+        CoinsUpdated?.Invoke(CoinsCount);
     }
 }

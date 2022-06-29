@@ -22,16 +22,15 @@ public class MenuCamera : MonoBehaviour
 
     private IEnumerator MakeTransition(Vector3 finishPoint, Vector3 finishRotation)
     {
-        var startPos = transform.position;
-        var startRot = transform.rotation.eulerAngles;
+        (Vector3 StartPos, Vector3 StartRot) = (transform.position, transform.rotation.eulerAngles);
         float RotAndPosDifference = (transform.rotation.eulerAngles - finishRotation).magnitude /
             (transform.position - finishPoint).magnitude;
 
-        while ((startPos - transform.position).magnitude < (finishPoint - startPos).magnitude)
+        while ((StartPos - transform.position).magnitude < (finishPoint - StartPos).magnitude)
         {
             var step = Time.deltaTime * _speed;
-            transform.Translate((finishPoint - startPos).normalized * step, Space.World);
-            transform.Rotate((finishRotation - startRot).normalized * step * RotAndPosDifference);
+            transform.Translate((finishPoint - StartPos).normalized * step, Space.World);
+            transform.Rotate((finishRotation - StartRot).normalized * step * RotAndPosDifference);
             yield return new WaitForFixedUpdate();
         }
     }

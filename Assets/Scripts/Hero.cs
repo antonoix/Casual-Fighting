@@ -10,7 +10,7 @@ public class Hero : MonoBehaviour, IAim
 
     [SerializeField] protected GameObject _dieParticles;
 
-    public float Multiplier { get; private set; } = 1;
+    private Growing _growingSystem;
     private Rigidbody _rb;
     private UI _UI;
     public float Speed { get; protected set; } = 5;
@@ -28,14 +28,13 @@ public class Hero : MonoBehaviour, IAim
 
     private void Awake()
     {
+        _growingSystem = new Growing(transform);
         _anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _UI = GameObject.FindObjectOfType<UI>();
         _isPlayer = TryGetComponent<Controllable>(out var controllable);
         if (_isPlayer)
         {
-            Multiplier += PlayerPrefs.GetFloat(PrefsConfig.SizeRatio);
-            transform.localScale = new Vector3(1, 1, 1) * Multiplier;
             Speed += PlayerPrefs.GetFloat(PrefsConfig.SpeedRatio);
         }
     }
@@ -61,8 +60,7 @@ public class Hero : MonoBehaviour, IAim
 
     private void BecomeBigger(float multiplier)
     {
-        Multiplier *= multiplier * 1.15f;
-        transform.localScale = new Vector3(1, 1, 1) * Multiplier;
+        _growingSystem.BecomeBigger(multiplier);
 
         if (_isEducation)
             return;
@@ -73,7 +71,7 @@ public class Hero : MonoBehaviour, IAim
 
     public virtual void Die(Hero killer)
     {
-        killer.BecomeBigger(Multiplier);
+        killer.BecomeBigger(_growingSystem.Multiplier);
         OnDied?.Invoke(this);
         var particles = Instantiate(_dieParticles);
         particles.transform.position = transform.position;

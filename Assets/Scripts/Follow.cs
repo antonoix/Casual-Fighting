@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    [SerializeField] private Vector3 offset;
-    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 _offset;
+    [SerializeField] private Transform _target;
 
-    [SerializeField] private Transform targetFinish;
-    [SerializeField] private float translateSpeed;
-
-    private Hero _targetHero;
-
-    void Start()
-    {
-        _targetHero = target.GetComponent<Hero>();
-    }
+    [SerializeField] private Transform _targetFinish;
+    [SerializeField] private float _translateSpeed;
 
     void FixedUpdate()
     {
-        if (target != null)
+        if (_target != null)
         {
-            var targetPosition = target.position + offset * _targetHero.Multiplier;
-            transform.position = Vector3.Lerp(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+            var targetPosition = _target.position + _offset * _target.localScale.x;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, _translateSpeed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, targetFinish.position, translateSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, _targetFinish.position, _translateSpeed * Time.deltaTime);
             transform.eulerAngles = new Vector3(90, 0, 0);
         }
     }

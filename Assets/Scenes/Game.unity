@@ -2583,10 +2583,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ea843653a85c74e9562474a29622b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 11, z: -11}
-  target: {fileID: 5862077422414521830}
-  targetFinish: {fileID: 2069637222}
-  translateSpeed: 5
+  _offset: {x: 0, y: 7, z: -8}
+  _target: {fileID: 5862077422414521830}
+  _targetFinish: {fileID: 2069637222}
+  _translateSpeed: 5
 --- !u!1 &981164673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,7 +4192,7 @@ MonoBehaviour:
   _sets:
   - {fileID: 11400000, guid: 823406ce15f990f4491e5e2b18f75938, type: 2}
   - {fileID: 11400000, guid: 9c1253f53817137459125214c0c6f7be, type: 2}
-  _ui: {fileID: 558443424}
+  _UI: {fileID: 558443424}
   _ads: {fileID: 14954688}
 --- !u!4 &1696593038
 Transform:
